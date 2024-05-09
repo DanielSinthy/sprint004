@@ -7,11 +7,13 @@
 </head>
 <body>
     <h1>Welcome, <%= user.name %>!</h1>
-    <h2>Your Transactions:</h2>
-    <ul>
-        <% user.transactions.forEach(function(transaction) { %>
-            <li><%= transaction.type %>: $<%= transaction.amount %></li>
-        <% }); %>
-    </ul>
+    <h2>Dashboard</h2>
+    
+
+    <form action="/transactions" method="get">
+        <button type="submit">Manage Transactions</button>
+    </form>
+
+
 </body>
 </html>
