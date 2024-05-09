@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const transactionRoutes = require('./routes/transactionRoutes');
 
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(authRoutes);
 
 app.use(dashboardRoutes);
 
+app.use(transactionRoutes);
 
 async function main() {
   try {
@@ -31,6 +33,7 @@ async function main() {
       const db = client.db(dbName);
       const transactionsCollection = db.collection('transactions');
 
+      // Additional routes setup goes here
 
   } catch (e) {
       console.error(e);
